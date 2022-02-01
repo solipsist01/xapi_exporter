@@ -6,7 +6,7 @@ ENV GOPATH /go
 ENV CGO_ENABLED=0
 
 RUN go mod init github.com/solipsist01/xapi_exporter
-RUN go get github.com/solipsist01/xapi_exporter
+RUN go mod tidy
 RUN go build -o /bin/xapi_exporter github.com/solipsist01/xapi_exporter
 
 FROM prom/busybox:glibc
